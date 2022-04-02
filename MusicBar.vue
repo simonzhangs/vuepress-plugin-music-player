@@ -5,13 +5,13 @@
           <div class="card-wrapper">
             <div class="card" :style="{ background: frameColor }">
               <div class="card-console">
-                  <el-slider
+                  <!-- <Slider
                     v-model="volume"
                     vertical
                     height="150px"
                     :show-tooltip="false"
                     :format-tooltip="format"
-                  ></el-slider>
+                  ></Slider> -->
               </div>
               <div
                 class="music-bar-top"
@@ -268,7 +268,7 @@
         if (e.songIDs) {
           e.songIDs.forEach((id) => {
             fetch(
-              "https://netease-cloud-music-api-two-rust.vercel.app/?type=song&id=" + id.toString()
+              "https://netease-cloud-music-api-two-rust.vercel.app/song/url/?id=" + id.toString()
             )
               .then((response) => response.json())
               .then((data) => {
@@ -276,7 +276,7 @@
                 let url = data.data[0].url;
                 this.MusicBar.log("load:" + url);
                 fetch(
-                  "https://netease-cloud-music-api-two-rust.vercel.app/?type=detail&id=" +
+                  "https://netease-cloud-music-api-two-rust.vercel.app/song/detail&ids" +
                     id.toString()
                 )
                   .then((response) => response.json())

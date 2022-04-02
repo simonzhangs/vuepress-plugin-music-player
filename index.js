@@ -29,6 +29,7 @@ const MusicBarPlugin = (options, ctx) => ({
     //   }
     //   console.log("\n");
     // }
+    console.log('Hello World!');
   }
 });
 
